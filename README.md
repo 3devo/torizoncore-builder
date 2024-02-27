@@ -72,6 +72,11 @@ $ tcb-env-setup.sh -- --volume /path/to/torizoncore-builder:/builder:ro --entryp
 This also changes the entrypoint, because the file has a .py extension
 in the repository which is removed when building the docker image.
 
+Note that this might break when the docker image is generated from
+a different version of the repository than the one you are mounting. It
+is thus recommended to do a local build of the docker container first
+and then using this approach for subsequent code-only changes.
+
 Running the linter (static analysis tool)
 =========================================
 
